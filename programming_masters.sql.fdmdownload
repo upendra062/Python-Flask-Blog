@@ -1,0 +1,119 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 23, 2020 at 06:34 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `programming masters`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `sno` int(11) NOT NULL,
+  `name` text CHARACTER SET latin1 NOT NULL,
+  `phone_num` varchar(50) CHARACTER SET latin1 NOT NULL,
+  `msg` text CHARACTER SET latin1 NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp(),
+  `email` varchar(50) CHARACTER SET latin1 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`sno`, `name`, `phone_num`, `msg`, `date`, `email`) VALUES
+(1, 'upendra', '7224001222', 'sending information to php myadmin', '2020-09-18 11:22:25', 'meraemail@gmail.com'),
+(2, 'upendra', '7224001222', 'sending information to php myadmin', '2020-09-18 11:24:03', 'meraemail@gmail.com'),
+(3, 'this_name', '1212121121', 'information checking to complete the process', '2020-09-18 11:32:04', 'bhadauriaupendra062@gmail.com'),
+(4, 'Sangram jadon', '15155151551', 'He is waiting for the message.', '2020-09-18 18:42:15', 'sangram@jadon'),
+(8, 'sony', '7224001222', 'My company is of sont then you have to do these.', '2020-09-20 17:43:56', 'sony@gmail.com'),
+(9, 'pk', '7575757575', 'i am mr pk of the pauaa', '2020-09-21 09:57:45', 'pk@gmail.com'),
+(10, 'us', '38747438', 'he is an undertaking agent of the world.\r\n', '2020-09-21 10:20:57', 'imagel@lsdkjfklj'),
+(11, 'sonu', '7224001222', 'I am working for the greater.', '2020-09-22 11:31:00', 'sonu@email.com'),
+(12, 'mera naam ', '4545444544', 'why this message is matter to you.', '2020-09-23 12:47:43', 'meraemail@gmail.com'),
+(13, 'mera naam ', '4545444544', 'why this message is matter to you.', '2020-09-23 12:57:32', 'meraemail@gmail.com'),
+(14, 'Upendra singh bhadauria', '1212121121', 'The phone number is the things that is you want.', '2020-09-23 17:18:44', 'meraemail@gmail.comppkpk');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+  `sno` int(11) NOT NULL,
+  `title` text CHARACTER SET latin1 NOT NULL,
+  `tagline` text CHARACTER SET latin1 NOT NULL,
+  `slug` varchar(25) CHARACTER SET latin1 NOT NULL,
+  `content` text CHARACTER SET latin1 NOT NULL,
+  `img_file` varchar(12) CHARACTER SET latin1 NOT NULL,
+  `date` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`sno`, `title`, `tagline`, `slug`, `content`, `img_file`, `date`) VALUES
+(1, 'Lets learn about stock market ', 'this is our first post', 'first-post', 'A stock market, equity market or share market is the aggregation of buyers and sellers of stocks (also called shares), which represent ownership claims on businesses; these may include securities listed on a public stock exchange, as well as stock that is only traded privately, such as shares of private companies which are sold to investors through equity crowdfunding platforms. Investment in the stock market is most often done via stockbrokerages and electronic trading platforms. Investment is usually made with an investment strategy in mind.', 'home.bg.jpg', '2020-09-18 09:47:21'),
+(2, 'This is second post ', 'coolest post ever', 'second post', 'Jinja2 is one of the most used template engines for Python. It is inspired by Django\'s templating system but extends it with an expressive language that gives template authors a more powerful set of tools. On top of that it adds sandboxed execution and optional automatic escaping for applications where security is important.\r\n\r\nIt is internally based on Unicode and runs on a wide range of Python versions from 2.5 to current versions including Python 3.', 'about.bg.jpg', '2020-09-18 09:54:21'),
+(3, 'Variables', 'Beautiful tagline', 'third post', 'Template variables are defined by the context dictionary passed to the template.\r\n\r\nYou can mess around with the variables in templates provided they are passed in by the application. Variables may have attributes or elements on them you can access too. What attributes a variable has depends heavily on the application providing that variable.\r\n\r\nYou can use a dot (.) to access attributes of a variable in addition to the standard Python __getitem__ “subscript” syntax ([]).\r\n\r\nThe following lines do the same thing:\r\n\r\n{{ foo.bar }}\r\n{{ foo[\'bar\'] }}\r\nIt’s important to know that the outer double-curly braces are not part of the variable, but the print statement. If you access variables inside tags don’t put the braces around them.\r\n\r\nIf a variable or attribute does not exist, you will get back an undefined value. What you can do with that kind of value depends on the application configuration: the default behavior is to evaluate to an empty string if printed or iterated over, and to fail for every other operation.\r\n\r\n', '', '2020-09-18 10:17:30'),
+(4, 'Tests', 'fourth tagline', 'fourth-post', 'Beside filters, there are also so-called “tests” available. Tests can be used to test a variable against a common expression. To test a variable or expression, you add is plus the name of the test after the variable. For example, to find out if a variable is defined, you can do name is defined, which will then return true or false depending on whether name is defined in the current template context.\r\n\r\nTests can accept arguments, too. If the test only takes one argument, you can leave out the parentheses. For example, the following two expressions do the same thing:\r\n\r\n{% if loop.index is divisibleby 3 %}\r\n{% if loop.index is divisibleby(3) %}\r\nThe List of Builtin Tests below describes all the builtin tests.', '', '2020-09-18 10:17:30'),
+(5, 'Whitespace Control', 'tagline', 'slug-next', 'In the default configuration:\r\n\r\na single trailing newline is stripped if present\r\n\r\nother whitespace (spaces, tabs, newlines etc.) is returned unchanged\r\n\r\nIf an application configures Jinja to trim_blocks, the first newline after a template tag is removed automatically (like in PHP). The lstrip_blocks option can also be set to strip tabs and spaces from the beginning of a line to the start of a block. (Nothing will be stripped if there are other characters before the start of the block.)\r\n\r\nWith both trim_blocks and lstrip_blocks enabled, you can put block tags on their own lines, and the entire block line will be removed when rendered, preserving the whitespace of the contents. For example, without the trim_blocks and lstrip_blocks options, this template:', '', '2020-09-18 10:22:23'),
+(6, 'title5', 'tagline 5', 'slug-next3', 'In the default configuration:\r\n\r\na single trailing newline is stripped if present\r\n\r\nother whitespace (spaces, tabs, newlines etc.) is returned unchanged\r\n\r\nIf an application configures Jinja to trim_blocks, the first newline after a template tag is removed automatically (like in PHP). The lstrip_blocks option can also be set to strip tabs and spaces from the beginning of a line to the start of a block. (Nothing will be stripped if there are other characters before the start of the block.)\r\n\r\nWith both trim_blocks and lstrip_blocks enabled, you can put block tags on their own lines, and the entire block line will be removed when rendered, preserving the whitespace of the contents. For example, without the trim_blocks and lstrip_blocks options, this template:', '', '2020-09-18 10:22:23');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
